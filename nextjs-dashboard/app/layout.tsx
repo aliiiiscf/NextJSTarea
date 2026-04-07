@@ -1,4 +1,6 @@
+import { Montserrat } from 'next/font/google';
 import './ui/global.css'
+import { montserrat } from './ui/fonts';
 
 export default function RootLayout({
   children,
@@ -7,7 +9,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${montserrat.className} antialiased`}>
         <div style={{ border: '1px solid #000'}}>
           {children}
         </div>
