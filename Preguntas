@@ -1,0 +1,74 @@
+1¿Qué es Next.js y por qué se dice que es el framework de React más popular? 
+Es una herramienta (framework) que toma lo mejor de React y le añade "superpoderes" automáticos, como la capacidad de cargar páginas mucho más rápido y aparecer mejor en los buscadores (Google). Es el más popular porque te facilita la vida al traer ya configuradas muchas cosas que en React tendrías que hacer a mano.
+
+2 ¿Cuál es el comando exacto con npx para inicializar un proyecto de Next.js asegurando usar la última versión?
+npx create-next-app@latest
+
+3 ¿Cuál es el comando utilizado para levantar el entorno de desarrollo y en qué puerto se ejecuta por defecto? 
+Se usa el comando npm run dev y el puerto por defecto es el 3000
+
+4 ¿Qué función cumple el comando npm run build en un proyecto de Next.js? 
+Este comando prepara la aplicación para el mundo real. Toma todo el código de desarrollo, lo limpia, lo optimiza y lo comprime para que la página funcione a máxima velocidad cuando la subas a internet.
+
+5 Describe para que sirven las carpetas, public y app
+public: Es como el almacén de cosas estáticas; aquí guardas imágenes, íconos o archivos que no cambian.
+app: Es donde escribes tus páginas, componentes y la lógica de cómo se navega en tu sitio.
+
+6 ¿Que es un CCS MODULE y como se usan? 
+Es un archivo CSS que "se queda en su casa". Sirve para que los estilos que escribas para un componente no se peleen con los de otro. Se usa creando un archivo con terminación .module.css y luego importándolo en tu código como si fuera una variable.
+
+7 ¿Que hace el componente  Layout.tsx ? 
+Funciona como una plantilla. Sirve para poner elementos que quieres que se repitan en varias páginas (como el menú lateral o el pie de página) sin tener que escribirlos en cada una de ellas.
+
+8 ¿Que es el enrutamiento ? 
+Es el sistema que decide qué página mostrar según lo que el usuario escriba en la dirección del navegador..
+
+9 ¿Cual es la diferencia entre Image e img?
+La etiqueta img es la básica de HTML. El componente Image de Next.js es una versión mejorada que cambia el tamaño de la imagen automáticamente, la hace pesar menos y solo la carga cuando realmente se va a ver en pantalla para ahorrar datos.
+
+10 ¿Que es el Lazy Load?
+Es una técnica que hace que las imágenes o partes pesadas de la página no se descarguen hasta que el usuario hace scroll y llega a ellas. Así, la página inicial carga instantáneamente porque no pierde tiempo bajando cosas que el usuario aún no ve.
+
+11 Cual es el funcionamiento del siguiente codigo, en que momento se muestra cada imagen
+La primera imagen (hero-desktop) tiene la clase hidden md:block, lo que significa que está oculta en celulares y solo se muestra en pantallas grandes (escritorio).
+La segunda imagen (hero-mobile) tiene block md:hidden, por lo que aparece en celulares y se oculta automáticamente cuando la pantalla se hace grande.
+
+12 ¿Como funciona el enrutamiento en Next JS  ? 
+Funciona a través de carpetas. No necesitas un archivo de configuración gigante; simplemente creas una carpeta dentro de app y Next.js entiende que el nombre de esa carpeta es una nueva dirección URL a la que el usuario puede entrar.
+
+13 ¿Que es una ruta en el contexto web y donde las hemos visto en la clase ? 
+Una ruta es la dirección específica que escribes después del dominio para llegar a una sección del sitio. En clase las hemos visto en las APIs, donde al final de la URL añadíamos /nombre_tabla para referirnos a la tabla que queremos de nuestra base de datos.
+
+14 ¿Que arrojo a MiduDev el localhost:300/dashboard, donde hemos visto esos errores en la clase ? 
+Error 404 (Not Found) porque intentó entrar a la ruta antes de crear la carpeta y el archivo page.tsx. Lo hemos visto cuando queremos acceder a una tabla de la base de datos que no existe desde Postman.
+
+15 ¿Que  es el File System Routing?
+Es la estructura de las carpetas que define la estructura de tus direcciones web. Si mueves o renombras una carpeta, la dirección de tu página cambia automáticamente.
+
+16 ¿Como funcionan las rutas anidadas?
+Funcionan metiendo una carpeta dentro de otra. Por ejemplo, si tienes una carpeta dashboard y dentro de ella creas otra llamada invoices, la ruta resultante será /dashboard/invoices.
+
+17 Investiga por que es necesario esto 
+Es necesario porque funciona como la "puerta de entrada" del archivo. Sin este comando, Next.js se asoma al archivo, no ve nada marcado como "principal" y no sabría qué dibujar en la pantalla del usuario.
+
+18 ¿Para que sirve el componente Link?
+Sirve para navegar entre las páginas de nuestra aplicación de forma "instantánea". A diferencia de un enlace normal, Link permite cambiar de sección sin que el navegador tenga que refrescar toda la pantalla, lo que hace que la experiencia se sienta como una aplicación móvil.
+
+19 ¿Que se carga cuando usamos <a> y que cuando se usa <link> ?
+Con <a>: El navegador descarga todo de nuevo (HTML, CSS, JavaScript e imágenes), como si estuvieras entrando al sitio por primera vez.
+Con <Link>: Next.js solo descarga el contenido de la nueva página que falta. Mantiene lo que ya está y solo "parchea" la parte central, ahorrando tiempo y datos.
+
+20 ¿Investiga que es un Hook?
+Es una función especial que te permite engancharte a características del navegador o del estado de la aplicación. Son herramientas que nos dan información extra o nos permiten hacer que la página reaccione a lo que hace el usuario. Todos empiezan con la palabra use
+
+21 ¿Que hooks usa Midu?
+Usa principalmente usePathname. Lo utiliza para saber en qué URL está el usuario en cada momento y así poder resaltar en azul el botón del menú que corresponde a la página activa.
+
+22 ¿Por que ocurre el siguiente error?  
+Porque intentamos usar un Hook dentro de un Server Component. Por defecto, Next.js ejecuta todo en el servidor (donde no existe el concepto de "URL del navegador"). Para arreglarlo, debemos escribir 'use client'; al principio del archivo, convirtiéndolo en un Client Component que sí tiene acceso a las herramientas del navegador.
+ 
+23 ¿Es posible ejecutar los componentes de react en el cliente y el servidor?
+Sí, Next.js permite que el servidor genere el contenido inicial para mayor velocidad y que el navegador se encargue de la interactividad posterior mediante la hidratación de React.
+
+25 ¿Que es el code splitting?
+Es una técnica de "divide y vencerás". En lugar de obligar al usuario a descargar todo el código de tu sitio web de un solo golpe (lo cual haría que la carga inicial fuera eterna), Next.js corta el código en trozos pequeños.
